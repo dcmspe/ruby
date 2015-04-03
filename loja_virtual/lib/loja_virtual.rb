@@ -2,6 +2,7 @@
 
 load "lib/livro.rb"
 load "lib/biblioteca.rb"
+load "lib/relatorio.rb"
 
 @teste_e_design = Livro.new "Mauricio Aniche", "123454", 247, 69.9, :testes
 @psicologia_avancada = Livro.new "Danilo Caetano", "45544", 121, 69.9, :psicologia
