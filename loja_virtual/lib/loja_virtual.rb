@@ -1,9 +1,22 @@
 # encoding: utf-8
 
+load "lib/midia.rb"
+p "...loaded lib/midia.rb"
+
+load "lib/dvd.rb"
+p "...loaded lib/dvd.rb"
+
 load "lib/livro.rb"
+p "...loaded lib/livro.rb"
+
 load "lib/biblioteca.rb"
+p "...loaded lib/biblioteca.rb"
+
 load "lib/relatorio.rb"
+p "...loaded lib/relatorio.rb"
+
 load "lib/banco_de_arquivos.rb"
+p "...loaded banco_de_arquivos.rb"
 
 @teste_e_design = Livro.new "Teste e Desgin","Mauricio Aniche", "123454", 247, 69.9, :testes
 @psicologia_avancada = Livro.new "Psicologia Avançada","Danilo Caetano", "45544", 121, 69.9, :psicologia

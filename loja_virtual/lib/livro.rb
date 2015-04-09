@@ -2,8 +2,7 @@
 
 class Livro
 
-	attr_accessor :valor
-	attr_reader :categoria, :isbn, :autor, :titulo
+	attr_reader :categoria, :autor
 
 	def initialize(titulo, autor, isbn = "1", numero_de_paginas, valor, categoria)
 		@titulo = titulo
@@ -12,6 +11,7 @@ class Livro
 		@numero_de_paginas = numero_de_paginas
 		@valor = valor
 		@categoria = categoria
+		midia = Midia.new
 	end
 
 	def eql?(outro_livro)
@@ -23,6 +23,8 @@ class Livro
 	end
 
 	def to_s
-		"Titulo: #{@titulo}, Autor: #{@autor}, ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}, Valor: #{@valor}, Categoria: #{@categoria}"
+		"Titulo: #{@titulo}, Autor: #{@autor}, 
+		ISBN: #{@isbn}, Páginas: #{@numero_de_paginas}, 
+		Valor: #{@valor}, Categoria: #{@categoria}"
 	end	
 end
