@@ -1,6 +1,8 @@
 # encoding: utf-8
 class DVD < Midia
 
+	attr_reader :categoria
+
 	def initialize(titulo, valor, categoria)
 		super()
 		@titulo = titulo

@@ -1,7 +1,13 @@
 # encoding: utf-8
 
+load "lib/formatador_moeda.rb"
+p "... loaded lib/formatador_moeda.rb"
+
 load "lib/midia.rb"
 p "...loaded lib/midia.rb"
+
+load "lib/revista.rb"
+p "...loaded lib/revista.rb"
 
 load "lib/cd.rb"
 p "...loaded lib/cd.rb"
@@ -12,8 +18,8 @@ p "...loaded lib/dvd.rb"
 load "lib/livro.rb"
 p "...loaded lib/livro.rb"
 
-load "lib/biblioteca.rb"
-p "...loaded lib/biblioteca.rb"
+load "lib/venda_facil.rb"
+p "...loaded lib/venda_facil.rb"
 
 load "lib/relatorio.rb"
 p "...loaded lib/relatorio.rb"
@@ -27,7 +33,7 @@ p "...loaded banco_de_arquivos.rb"
 @web_design_responsivo = Livro.new "Web Design Responsivo","Tárcio Zemel", "77888", 189, 69.9, :web_design
 @tdd = Livro.new "Test Driven Development","Mauricio Aniche", "99999", 195, 69.90, :testes
 
-@biblioteca = Biblioteca.new
+@biblioteca = VendaFacil::Set.new
 @biblioteca.adiciona @teste_e_design
 @biblioteca.adiciona @psicologia_avancada
 @biblioteca.adiciona @ruby
@@ -35,3 +41,6 @@ p "...loaded banco_de_arquivos.rb"
 @biblioteca.adiciona @tdd
 
 @relatorio = Relatorio.new @biblioteca
+
+@windows = DVD.new "Windows 7 for Dummies", 98.9, :sistemas_operacionais
+@linux = DVD.new "Linux for for Dummies", 13.9, :sistemas_operacionais
