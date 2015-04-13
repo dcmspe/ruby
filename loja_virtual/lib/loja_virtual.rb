@@ -3,6 +3,9 @@
 load "lib/midia.rb"
 p "...loaded lib/midia.rb"
 
+load "lib/cd.rb"
+p "...loaded lib/cd.rb"
+
 load "lib/dvd.rb"
 p "...loaded lib/dvd.rb"
 

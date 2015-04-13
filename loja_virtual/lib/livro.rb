@@ -1,6 +1,5 @@
 # encoding: utf-8
-
-class Livro
+class Livro < Midia
 
 	attr_reader :categoria, :autor
 
@@ -11,7 +10,7 @@ class Livro
 		@numero_de_paginas = numero_de_paginas
 		@valor = valor
 		@categoria = categoria
-		midia = Midia.new
+		@desconto = 0.15
 	end
 
 	def eql?(outro_livro)
