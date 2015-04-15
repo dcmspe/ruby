@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 load "lib/formatador_moeda.rb"
-p "... loaded lib/formatador_moeda.rb"
+p "...loaded lib/formatador_moeda.rb"
 
 load "lib/midia.rb"
 p "...loaded lib/midia.rb"

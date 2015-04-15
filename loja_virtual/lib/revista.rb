@@ -1,12 +1,14 @@
-# encoding: utf-8
+ # encoding: utf-8
 class Revista
 
 	#Atributo de instância da class
 	@id = 0
 
 	#Método da class
-	def self.id
-		@id += 1
+	class << self
+		def id
+			@id += 1
+		end
 	end
 	
 	def initialize(titulo)
