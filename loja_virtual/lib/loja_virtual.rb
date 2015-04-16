@@ -1,5 +1,8 @@
 # encoding: utf-8
 
+load "lib/document_not_found.rb"
+p "...loaded lib/document_not_found.rb"
+
 load "lib/formatador_moeda.rb"
 p "...loaded lib/formatador_moeda.rb"
 

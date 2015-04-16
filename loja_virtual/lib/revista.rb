@@ -1,31 +1,40 @@
- # encoding: utf-8
+# encoding: utf-8
+require "fileutils"
+
 class Revista
 
-	#Atributo de instância da class
-	@id = 0
+	attr_reader :titulo, :id
+	attr_accessor :valor
 
-	#Método da class
-	class << self
-		def id
-			@id += 1
-		end
+	def initialize(titulo, valor)
+		@titulo = titulo
+		@valor = valor
+		@id = self.class.next_id #Atribui um id ao objeto Revista
 	end
 	
-	def initialize(titulo)
-		@titulo = titulo
-		@id = self.class.id
+	def save
+		File.open("db/revistas/#{@id}.yml", "w") do |file|
+			file.puts serialize
+		end	
 	end
 
-	def retorna_valor_de_id_do_singleton_class
-		self.class.id
+	def self.find(id)
+		mensagem_de_erro = "Arquivo db/revistas/#{id}.yml não encontrado!"
+		raise DocumentNotFound, mensagem_de_erro, caller unless File.exists?("db/revistas/#{id}.yml")
+		YAML.load File.open("db/revistas/#{id}.yml", "r")
+	end
+	
+	def destroy
+		FileUtils.rm "db/revistas/#{id}.yml"
 	end
 
-	def id
-		@id
+	private
+
+	def serialize
+		YAML.dump self
 	end
 
-	def titulo
-		titulo_upcase = @titulo.upcase
-		"Título: #{titulo_upcase}"
+	def self.next_id
+		Dir.glob("db/revistas/*.yml").size + 1
 	end
 end

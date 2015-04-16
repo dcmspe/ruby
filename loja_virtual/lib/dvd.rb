@@ -1,4 +1,4 @@
-exi# encoding: utf-8
+# encoding: utf-8
 class DVD < Midia
 	attr_reader :titulo, :categoria
 
