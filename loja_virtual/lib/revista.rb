@@ -10,9 +10,11 @@ class Revista
 		@titulo = titulo
 		@valor = valor
 		@id = self.class.next_id #Atribui um id ao objeto Revista
+		@new_record = true
 	end
 	
 	def save
+		@new_record = false
 		File.open("db/revistas/#{@id}.yml", "w") do |file|
 			file.puts serialize
 		end	
@@ -25,7 +27,10 @@ class Revista
 	end
 	
 	def destroy
-		FileUtils.rm "db/revistas/#{id}.yml"
+		unless @destroyed or @new_record
+			FileUtils.rm "db/revistas/#{id}.yml"
+			@destroyed = true
+		end
 	end
 
 	private
